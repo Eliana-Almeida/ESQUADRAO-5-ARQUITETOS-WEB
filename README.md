@@ -1,6 +1,6 @@
-# ESQUADRÃO 5 — Versão Resumida
+# ESQUADRÃO 5: OS ARQUITETOS WEB
 
-Projeto didático para apresentação rápida, visual e objetiva.
+Projeto tecnológico desenvolvido para demonstrar bibliotecas Python aplicadas ao desenvolvimento web moderno.
 
 ## Instalar
 ```bash
@@ -11,9 +11,9 @@ pip install -r requirements.txt
 ```bash
 python portal/app.py
 ```
-Abrir: http://127.0.0.1:5000
+Abrir: http://127.0.0.1:5010
 
-## Comandos
+## Execução das Bibliotecas
 Eliana:
 ```bash
 python bibliotecas/Eliana/flask_demo.py
