@@ -1,21 +1,35 @@
+# Importa o Flask para criar a aplicação web
+# Importa o request para capturar dados enviados pelo formulário
 from flask import Flask, request
 
+
+# Cria a aplicação Flask
 app = Flask(__name__)
 
+
+# Define a rota principal do sistema
+# GET abre a página no navegador
+# POST envia os dados do formulário para o Python
 @app.route("/", methods=["GET", "POST"])
 def home():
 
+    # Cria variáveis iniciais vazias
     nome = ""
     cpf = ""
     curso = ""
 
+    # Variável que vai guardar o resultado processado pelo Python
     resultado = ""
 
+    # Verifica se o usuário enviou o formulário
     if request.method == "POST":
+
+        # Captura os dados digitados pelo usuário no navegador
         nome = request.form.get("nome")
         cpf = request.form.get("cpf")
         curso = request.form.get("curso")
 
+        # Monta o resultado que será exibido na tela
         resultado = f"""
         <div class="resultado">
             <h2>Dados recebidos pelo Python</h2>
@@ -32,6 +46,7 @@ def home():
         </div>
         """
 
+    # Retorna a página HTML completa para o navegador
     return f"""
     <!DOCTYPE html>
     <html lang="pt-br">
@@ -166,5 +181,9 @@ def home():
     </html>
     """
 
+
+# Garante que o servidor só execute quando este arquivo for rodado diretamente
 if __name__ == "__main__":
+
+    # Executa o Flask em modo debug na porta 5010
     app.run(debug=True, port=5010)
